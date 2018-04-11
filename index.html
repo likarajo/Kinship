@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+
+  <title>kinship</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+  <meta name="description" content="Twitter Data Mining" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <!--base href="https://likarajo.github.io/kinship/" /-->
+  <link rel="canonical" href="https://likarajo.github.io/kinship/" />
+
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="https://buttons.github.io/buttons.js" async defer></script>
+
+</head>
+
+<body>
+
+  <header>
+    <h1>kinship</h1>
+    <p>Twitter Data Mining</p>
+    <div id="banner">
+      <a class="github-button" aria-label="View likarajo/kinship on GitHub" href="https://github.com/likarajo/kinship" target="_blank" data-size="large">View on Github</a>
+      <br>
+      <a class="github-button" aria-label="Fork likarajo/kinship on GitHub" href="https://github.com/likarajo/kinship/fork" target="_blank" data-icon="octicon-repo-forked" data-show-count="true">Fork</a>
+      <a class="github-button" aria-label="Star likarajo/kinship on GitHub" href="https://github.com/likarajo/kinship" target="_blank" data-icon="octicon-star" data-show-count="true">Star</a>
+    </div>
+  </header>
+
+  <div class="wrapper">
+
+    <nav>
+      <h3>Contents<h3>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#requirements">Requirements</a></li>
+        <li><a href="#libraries-and-modules">Libraries &amp; Modules</a></li>
+        <li><a href="#creating-executables">Creating Executables</a></li>
+        <li><a href="#inputs">Inputs</a></li>
+        <li><a href="#outputs">Outputs</a></li>
+      </ul>
+    </nav>
+
+    <section>
+
+      <h2 id="intoduction">Intoduction:</h2>
+      <p>Twitter users tweet (post status) about any topic within the character limit, making it a powerful medium of information sharing.
+        ‘Kinship’ is a simple tool that finds out what are the related words (kins) to a particular word that twitter users have twitted.
+      </p>
+      <p>For example, if we take into account the word <em>Wimbledon</em>, this tool will fetch the twitter stream of all tweets
+        containing the word Wimbledon, and display the top n most related words - like <em>Federer</em>, <em>Tennis</em>, <em>Champion</em>,
+        <em>record</em> etc. expectedly.
+      </p>
+
+      <h2 id="requirements">Requirements:</h2>
+      <ul>
+        <li>
+          <p><strong>Twitter API</strong><br /> Visit <a href="https://apps.twitter.com" target="_blank">https://apps.twitter.com</a><br /> Create New App<br /> Generate and save the credentials</p>
+        </li>
+        <li>
+          <p><strong>Python 3.6.3</strong><br /> Visit <a href="https://www.python.org/downloads/release/python-363" target="_blank">https://www.python.org/downloads/release/python-363</a><br /> Download and install Python<br /> Set environment and path variables</p>
+        </li>
+      </ul>
+
+      <h2 id="libraries-and-modules">Libraries:</h2>
+      <ul>
+        <li>
+          <p><strong>twitter</strong><br /> Install <strong>twitter</strong> library into <em>%PYTHON_HOME%\Lib\site-packages</em><br />
+            <code class="highlighter-rouge">&gt;&gt;&gt; pip install twitter</code></p>
+        </li>
+        <li>
+          <p><strong>json</strong><br /> Python 3.6 has <strong>json</strong> library at <em>%PYTHON_HOME%\Lib\json</em></p>
+        </li>
+        <li>
+          <p><strong>nltk</strong><br /> Install <strong>nltk</strong> (NLP and tokenizer) library into <em>%PYTHON_HOME%\Lib\site-packages</em><br />
+            <code class="highlighter-rouge">&gt;&gt;&gt; pip install nltk</code></p>
+        </li>
+        <li>
+          <p><strong>stopwords</strong><br /> Download and unzip nltk <strong>stopwords</strong> into <em>%PYTHON_HOME%\Lib\nltk_data</em><br />
+            <code class="highlighter-rouge">&gt;&gt;&gt; import nltk</code><br />
+            <code class="highlighter-rouge">&gt;&gt;&gt; nltk.download('stopwords')</code></p>
+        </li>
+        <li>
+          <p><strong>re</strong><br /> Python 3.6 has <strong>re</strong> (regular expressions) module at <em>%PYTHON_HOME%\Lib\re.py</em></p>
+        </li>
+        <li>
+          <p><strong>string</strong><br /> Python 3.6 has <strong>string</strong> module at <em>%PYTHON_HOME%\Lib\string.py</em></p>
+        </li>
+        <li>
+          <p><strong>os</strong><br /> Python 3.6 has <strong>os</strong> (operating system) module at <em>%PYTHON_HOME%\Lib\os.py</em></p>
+        </li>
+        <li>
+          <p><strong>matplotlib</strong><br /> Install <strong>matplotlib</strong> library into <em>%PYTHON_HOME%\Lib\site-packages</em><br />
+            <code class="highlighter-rouge">&gt;&gt;&gt; pip install matplotlib</code></p>
+        </li>
+        <li>
+          <p><strong>datetime</strong><br /> Python 3.6 has <strong>datetime</strong> module at <em>%PYTHON_HOME%\Lib\datetime.py</em></p>
+        </li>
+        <li>
+          <p><strong>collections</strong><br /> Python 3.6 has <strong>collections</strong> library at <em>%PYTHON_HOME%\Lib\collections</em></p>
+        </li>
+        <li>
+          <p><strong>tkinter</strong> Python 3.6 has <strong>tkinter</strong> library (for GUI development) at <em>%PYTHON_HOME%\Lib\tkinter</em></p>
+        </li>
+      </ul>
+
+      <h2 id="creating-executable">Creating Executable:</h2>
+      <ul>
+        <li><strong>pyinstaller</strong><br /> Install <strong>pyinstaller</strong> library into <em>%PYTHON_HOME%\Lib\site-packages</em><br />
+          <code class="highlighter-rouge">&gt;&gt;&gt; pip install pyinstaller</code><br /> This also installs <strong>pypiwin32</strong> utilities library of python extension for windows</li>
+      </ul>
+      <p>Create the executable file using the following command:<br /> `&gt; pyinstaller.exe –onefile –windowed –icon=kinship.ico kinship-gui.py</p>
+
+      <h2 id="inputs">Inputs:</h2>
+      <ul>
+        <li>ACCESS_TOKEN</li>
+        <li>ACCESS_SECRET</li>
+        <li>CONSUMER_KEY</li>
+        <li>CONSUMER_SECRET</li>
+        <li>‘word’</li>
+        <li>No. of ‘kin’ words required (n)</li>
+        <li>Total no. of tweets to be fetched from Twitter Stream for the data corpus</li>
+      </ul>
+
+      <h2 id="output">Output:</h2>
+      <p>A plot displaying the ‘n’ most closely related ‘kins’ that Twitter users use with the given ‘word’.</p>
+
+    </section>
+
+    <footer>
+      <h3>&copy; 2017 <a href="https://likarajo.github.io" target="_blank">likarajo</a></h3>
+    </footer>
+
+  </div>
+
+
+</body>
+
+</html>
