@@ -9,10 +9,8 @@ html, button, input, select, textarea {
 }
 
 body {
-  margin: 0
-}
-
-body {
+  margin: 0;
+  overflow-x: hidden;
   font: 14px/22px 'Quattrocento Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #666;
   font-weight: 300;
@@ -28,16 +26,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
 header {
   z-index: 99;
   padding: 10px 20px 10px 20px;
-  margin: 10;
   top: 0;
-  left: 0;
-  right: 0;
-  position: fixed;
   width: 100%;
-  min-height: 50px;
+  min-height: 30%;
   text-align: center;
-  background: url(logo.png) #778899;
-  box-shadow: 2px 2px #000;
+  background: url('logo.png') #5F9EA0;
 }
 
 header h1 {
@@ -59,8 +52,6 @@ header p {
 }
 
 .wrapper {
-  width: 650px;
-  margin: 0 auto;
   position: relative
 }
 
@@ -70,12 +61,11 @@ nav ul, nav ol {
 }
 
 nav {
-  width: 230px;
+  left: 0;
+  top: 30%;
+  width: 20%;
   position: fixed;
-  top: 220px;
-  left: 50%;
-  margin-left: -580px;
-  text-align: right
+  text-align: right;
 }
 
 nav ul {
@@ -111,20 +101,30 @@ nav ul a:hover {
   color: #999
 }
 
+#demo {
+  display: none;
+}
+
+#main {
+  display: block;
+}
+
 section img {
   max-width: 100%
 }
 
-section {
-  width: 800px;
+section, #demo {
+  left: 25%;
+  top: 30%;
+  width: 50%;
+  position: relative;
+  text-align: left;
   padding: 30px 30px 50px 30px;
   margin: 20px 0;
-  margin-top: 190px;
-  position: relative;
   background: #fbfbfb;
   border-radius: 3px;
   border: 1px solid #cbcbcb;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.09), inset 0px 0px 2px 2px rgba(255, 255, 255, 0.5), inset 0 0 5px 5px rgba(255, 255, 255, 0.4)
+  box-shadow: 0px 1px 2px #696969;
 }
 
 footer {
@@ -132,10 +132,7 @@ footer {
   padding: 2px 2px 2px 2px;
   margin-right: 10px;
   bottom: 0;
-  left:0;
-  right: 0;
   width: 100%;
-  position: fixed;
   min-height: 10px;
   text-align: center;
 }
@@ -603,10 +600,9 @@ td:first-child {
 }
 
 hr {
-  border: 0;
+  border: 2;
   outline: none;
   height: 11px;
-  background: transparent url("../images/hr.gif") center center repeat-x;
   margin: 0 0 20px
 }
 
