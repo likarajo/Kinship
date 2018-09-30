@@ -22,10 +22,10 @@ textTweetCount = IntVar()
 entryTweetCount = Entry(app, textvariable=textTweetCount).grid(row=1, column=1)
 def getKin():
     kinships(
-        ACCESS_TOKEN = os.environ['2390269165-bTMxMFUrJma8etDMHoB6uTOl8WElxLMPp3WDRFE'],
-        ACCESS_SECRET = os.environ['yEhAL19G3sgOAtzioBYyV1CLrx93GtZYhowWsLJARZwmA'],
-        CONSUMER_KEY = os.environ['jz0ikcqx7F4VH7haLxn16rOH4'],
-        CONSUMER_SECRET = os.environ['Y5jHZdHguM3YtDcH2RED1KZcepjkenNMOtGZF1XMZ9RG9oddUc'],
+        ACCESS_TOKEN = os.environ['xx'],
+        ACCESS_SECRET = os.environ['xx'],
+        CONSUMER_KEY = os.environ['xx'],
+        CONSUMER_SECRET = os.environ['xx'],
         word = textWord.get(),
         kins = textKins.get(),
         tweet_count = textTweetCount.get()
