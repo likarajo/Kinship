@@ -1,9 +1,8 @@
-from nltk.corpus import stopwords
 import re
 import string
 
 punctuations = list(string.punctuation)
-stopWords = stopwords.words('English')
+stopWords = [line.strip() for line in open("lib/stopwords/english", 'r')]
 commons = ['rt','Rt','RT','via','Via','VIA','…']
 
 terms_to_ignore = punctuations + stopWords + commons
