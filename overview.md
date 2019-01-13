@@ -21,15 +21,6 @@ Install twitter library into **%PYTHON_HOME%\Lib\site-packages**
 ### json  
 Python 3.6 has json library at **%PYTHON_HOME%\Lib\json**
 
-### nltk  
-Install nltk (NLP and tokenizer) library into **%PYTHON_HOME%\Lib\site-packages**. 
-`>>> pip install nltk`  
-Download and unzip nltk stopwords into **%PYTHON_HOME%\Lib\nltk_data**  
-```
->>> import nltk
->>> nltk.download('stopwords')
-```
-
 ### re  
 Python 3.6 has re (regular expressions) module **at %PYTHON_HOME%\Lib\re.py**
 
